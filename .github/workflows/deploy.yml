@@ -50,6 +50,11 @@ jobs:
     #   run: |
     #     kubectl set image deployment/ecom-backend ecom-backend=gcr.io/${{ secrets.GCP_PROJECT_ID }}/ecom-backend:$GITHUB_SHA
     #     kubectl rollout status deployment/ecom-backend
+    - name: 'Get GKE credentials'
+      uses: 'google-github-actions/get-gke-credentials@v2'
+      with:
+        cluster_name: 'my-cluster'
+        location: 'us-central1'
 
     - name: Install Helm
       uses: azure/setup-helm@v4.2.0
