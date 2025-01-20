@@ -1,0 +1,12 @@
+replicaCount: 3
+
+image:
+  repository: gcr.io/boxwood-builder-448403-u8/ecom-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: {}

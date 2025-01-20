@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-backend
+  labels:
+    app: ecom-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ecom-backend
+  template:
+    metadata:
+      labels:
+        app: ecom-backend
+    spec:
+      containers:
+        - name: ecom-backend
+          image: gcr.io/boxwood-builder-448403-u8/ecom-backend:latest
+          ports:
+            - containerPort: 8080
